@@ -6,7 +6,7 @@ HARDWARE REQUIRED :  PC, Cyclone II , USB flasher
 
 SOFTWARE REQUIRED :  Quartus prime
 ## THEORY :
-SR Flip-Flop
+### SR Flip-Flop
 SR flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, SR latch operates with enable signal. The circuit diagram of SR flip-flop is shown in the following figure.
 
 ![image](https://user-images.githubusercontent.com/36288975/167910294-bb550548-b1dc-4cba-9044-31d9037d476b.png)
@@ -121,6 +121,8 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by : Pradeep Raj.P
 
 RegisterNumber :  212222240073
+
+#### SR Flip Flop
 ```
 module Flipflop(s,r,q,Qbar,clk);
 input s,r,clk;
@@ -134,14 +136,38 @@ Qbar=r|(Qbar&(~s));
 end
 endmodule
 ```
+#### JK Flip Flop
+```
+module jkflipflop(k,clk,j,Q,Qbar);
+input k,clk,j;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=((~Q)&j)|(Q&~k);
+Qbar=(~Qbar&k)|(Qbar&~j);
+end
+endmodule
+```
 ## RTL REALIZATION :
+#### SR Flip Flop 
 ![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/78207e42-fe9d-401a-b06d-e18483e45431)
+#### JK Flip Flop
+![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/b6467310-79ca-404d-90fd-69a2fd96300f)
 
 ## TRUTH TABLE :
+#### SR Flip Flop
 ![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/757e4204-6963-4f3d-bd11-e5ef3552ca5d)
+#### JK Flip Flop
+![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/cb503e4b-1aa3-4ca4-b045-6b04ecc9b8d4)
 
 ## OUTPUT WAVEFORM :
+#### SR Flip Flop
 ![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/9ab1149e-77d2-457d-8245-8159d4dfaf14)
+#### JK Flip Flop
+![image](https://github.com/Pradeeppachiyappan/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118707347/7c98a1d3-bf2a-402e-814b-7907257055c0)
 
 ## RESULT :
 Thus the flipflops circuits are designed and the truth tables is verified using quartus software.
