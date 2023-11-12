@@ -1,4 +1,5 @@
-# Experiment--05-Implementation-of-flipflops-using-verilog
+# Experiment-05-Implementation-of-flipflops-using-verilog
+## DATE :
 ## AIM : 
 To implement all the flipflops using verilog and validating their functionality using their functional tables
 ## EQUIPMENT REQUIRED :
